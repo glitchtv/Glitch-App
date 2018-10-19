@@ -4,7 +4,8 @@
         "/src/screens/Home.js",
         "/src/screens/Search.js",
         "/src/screens/SearchText.js",
-        "/src/screens/SearchTags.js"
+        "/src/screens/SearchTags.js",
+        "/src/screens/AnimeInfo.js"
     ],
     "symbols": [
         "/src/symbols/AnimeCard.js",
