@@ -3,7 +3,8 @@
         "/src/screens/Splash.js",
         "/src/screens/Home.js",
         "/src/screens/Search.js",
-        "/src/screens/SearchText.js"
+        "/src/screens/SearchText.js",
+        "/src/screens/SearchTags.js"
     ],
     "symbols": [
         "/src/symbols/AnimeCard.js",

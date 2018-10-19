@@ -11,7 +11,9 @@ export default class ChosenTag extends Component {
     return (
       <View style={[this.props.style]}>
         <View style={styles.rect3} />
-        <Text style={styles.text2}>Genre</Text>
+        <Text style={styles.text2}>
+          {this.props.text2 ? this.props.text2 : "Genre"}
+        </Text>
       </View>
     );
   }
