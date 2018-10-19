@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Center } from "@builderx/utils";
 import AnimeCard from "../symbols/AnimeCard";
 
-import { View, StyleSheet, Image, FlatList } from "react-native";
+import { View, StyleSheet, Image, FlatList, Text } from "react-native";
 
 export default class Untitled extends Component {
   render() {
@@ -26,6 +26,7 @@ export default class Untitled extends Component {
           }}
           horizontal={true}
         />
+        <Text style={styles.recentLabel}>Recently Watched</Text>
       </View>
     );
   }
@@ -68,5 +69,12 @@ const styles = StyleSheet.create({
     width: 146,
     height: 243,
     position: "absolute"
+  },
+  recentLabel: {
+    top: 84,
+    left: 28,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(170,170,170,1)"
   }
 });
