@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Center } from "@builderx/utils";
 import AnimeCard from "../symbols/AnimeCard";
-import { View, StyleSheet, Image } from "react-native";
+
+import { View, StyleSheet, Image, FlatList } from "react-native";
 
 export default class Untitled extends Component {
   render() {
@@ -14,7 +15,17 @@ export default class Untitled extends Component {
             style={styles.image}
           />
         </Center>
-        <AnimeCard style={styles.animeCard} />
+        <FlatList
+          style={styles.list}
+          renderItem={({ item, separators }) => {
+            return (
+              <View style={styles.rect}>
+                <AnimeCard style={styles.animeCard} animeTitle genre />
+              </View>
+            );
+          }}
+          horizontal={true}
+        />
       </View>
     );
   }
@@ -39,11 +50,23 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "0%"
   },
-  animeCard: {
+  list: {
     position: "absolute",
-    top: 108,
-    left: 20,
     height: 243,
-    width: 146
+    top: 107,
+    left: 0,
+    right: 0
+  },
+  rect: {
+    width: 146,
+    height: 243,
+    marginLeft: 20
+  },
+  animeCard: {
+    top: 0,
+    left: 0,
+    width: 146,
+    height: 243,
+    position: "absolute"
   }
 });

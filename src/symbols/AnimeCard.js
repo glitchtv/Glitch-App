@@ -12,10 +12,18 @@ export default class AnimeCard extends Component {
       <View style={[this.props.style]}>
         <View style={styles.animeCover} />
         <Text style={styles.animeTitle} selectable={false} numberOfLines={2}>
-          Kimi no Uwa
+          {this.props.animeTitle ? (
+            this.props.animeTitle
+          ) : (
+            "\n          Kimi no Uwa\n        "
+          )}
         </Text>
         <Text style={styles.genre} selectable={false} numberOfLines={2}>
-          Ecchi, Fantasy
+          {this.props.genre ? (
+            this.props.genre
+          ) : (
+            "\n          Ecchi, Fantasy\n        "
+          )}
         </Text>
       </View>
     );

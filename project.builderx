@@ -4,7 +4,6 @@
         "/src/screens/Untitled.js"
     ],
     "symbols": [
-        "/src/symbols/header5.js",
         "/src/symbols/AnimeCard.js"
     ],
     "assets": [],
@@ -17,7 +16,5 @@
     "tempPath": "/var/folders/mx/6x1yjh6j2bb9lfpdx8zs5wrm0000gn/T/Builder1kXLCh5",
     "useStylesheet": true,
     "rulers": {},
-    "missingFonts": [
-        "Roboto"
-    ]
+    "missingFonts": []
 }
