@@ -47,7 +47,12 @@ export default class Home extends Component {
           iconType="FontAwesome"
           iconName="search"
         />
-        <Icon name="ios-refresh-outline" style={styles.icon} type="Ionicons" />
+        <Icon
+          name="refresh"
+          style={styles.icon}
+          type="MaterialCommunityIcons"
+        />
+        <Icon style={styles.icon2} name="search" type="MaterialIcons" />
       </View>
     );
   }
@@ -144,11 +149,19 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   icon: {
-    top: 13,
-    left: 17,
+    top: 11,
+    left: 13,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(255,255,255,1)",
     fontSize: 40
+  },
+  icon2: {
+    top: 13,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(255,255,255,1)",
+    fontSize: 35,
+    left: "87.78%"
   }
 });
