@@ -4,7 +4,7 @@ import AnimeCard from "../symbols/AnimeCard";
 
 import { View, StyleSheet, Image, FlatList, Text } from "react-native";
 
-export default class Untitled extends Component {
+export default class Home extends Component {
   render() {
     return (
       <View style={styles.root}>

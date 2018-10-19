@@ -2,14 +2,15 @@ import React from "react";
 import { YellowBox } from "react-native";
 import { Font } from "expo";
 import Splash from "./src/screens/Splash";
-import Untitled from "./src/screens/Untitled";
+import Home from "./src/screens/Home";
+
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 const DrawerNavigation = DrawerNavigator({
   Splash: {
     screen: Splash
   },
-  Untitled: {
-    screen: Untitled
+  Home: {
+    screen: Home
   }
 });
 const StackNavigation = StackNavigator(
@@ -20,8 +21,8 @@ const StackNavigation = StackNavigator(
     Splash: {
       screen: Splash
     },
-    Untitled: {
-      screen: Untitled
+    Home: {
+      screen: Home
     }
   },
   {

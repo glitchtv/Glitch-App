@@ -1,7 +1,7 @@
 {
     "artboards": [
         "/src/screens/Splash.js",
-        "/src/screens/Untitled.js"
+        "/src/screens/Home.js"
     ],
     "symbols": [
         "/src/symbols/AnimeCard.js"
