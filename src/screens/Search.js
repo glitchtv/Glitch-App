@@ -5,7 +5,7 @@ import ChosenTag from "../symbols/ChosenTag";
 import TagRow from "../symbols/TagRow";
 
 import { Center } from "@builderx/utils";
-import { View, StyleSheet, FlatList, Text } from "react-native";
+import { View, StyleSheet, FlatList, Text, TextInput } from "react-native";
 
 export default class Search extends Component {
   render() {
@@ -37,6 +37,12 @@ export default class Search extends Component {
           horizontal={false}
         />
         <Text style={styles.text}>Status</Text>
+        <Center horizontal>
+          <TextInput placeholder="TextInput" style={styles.textInput} />
+        </Center>
+        <Center horizontal>
+          <Text style={styles.text2}>OR, select filters below</Text>
+        </Center>
       </View>
     );
   }
@@ -73,8 +79,8 @@ const styles = StyleSheet.create({
   list: {
     position: "absolute",
     width: 320,
-    height: 341.49,
-    top: 120,
+    height: 342,
+    top: 145,
     left: 19
   },
   rect3: {
@@ -83,18 +89,19 @@ const styles = StyleSheet.create({
     marginBottom: 7
   },
   label: {
-    top: 99,
+    top: 124,
     left: 23,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(170,170,170,1)"
   },
   list2: {
-    top: 490,
-    left: 20,
+    top: 536,
+
     width: 319,
-    height: 152.59,
-    position: "absolute"
+    height: 92,
+    position: "absolute",
+    left: "5.56%"
   },
   rect4: {
     height: 31,
@@ -109,10 +116,24 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   text: {
-    top: 470,
+    top: 516,
     left: 24,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(170,170,170,1)"
+  },
+  textInput: {
+    height: 37,
+    width: 257,
+    top: 51,
+    position: "absolute",
+    color: "rgba(255,255,255,1)",
+    fontSize: 18
+  },
+  text2: {
+    top: 101,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(187,187,187,1)"
   }
 });
