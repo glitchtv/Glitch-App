@@ -2,7 +2,8 @@
     "artboards": [
         "/src/screens/Splash.js",
         "/src/screens/Home.js",
-        "/src/screens/Search.js"
+        "/src/screens/Search.js",
+        "/src/screens/SearchText.js"
     ],
     "symbols": [
         "/src/symbols/AnimeCard.js",
@@ -10,7 +11,8 @@
         "/src/symbols/ChosenTag.js",
         "/src/symbols/Tag.js",
         "/src/symbols/TagRow.js",
-        "/src/symbols/button31.js"
+        "/src/symbols/button31.js",
+        "/src/symbols/AnimeRow.js"
     ],
     "assets": [],
     "defaultArtboardDirectory": "/src/screens",

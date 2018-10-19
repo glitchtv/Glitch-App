@@ -5,6 +5,7 @@ import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
 
 import Search from "./src/screens/Search";
+import SearchText from "./src/screens/SearchText";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 const DrawerNavigation = DrawerNavigator({
   Splash: {
@@ -15,6 +16,9 @@ const DrawerNavigation = DrawerNavigator({
   },
   Search: {
     screen: Search
+  },
+  SearchText: {
+    screen: SearchText
   }
 });
 const StackNavigation = StackNavigator(
@@ -30,6 +34,9 @@ const StackNavigation = StackNavigator(
     },
     Search: {
       screen: Search
+    },
+    SearchText: {
+      screen: SearchText
     }
   },
   {
