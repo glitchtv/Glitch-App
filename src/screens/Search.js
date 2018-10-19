@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
 
-import ChosenTag from "../symbols/ChosenTag";
 import TagRow from "../symbols/TagRow";
 
 import { Center } from "@builderx/utils";
@@ -13,7 +12,6 @@ export default class Search extends Component {
     return (
       <View style={styles.root}>
         <Icon name="ios-close" style={styles.icon} type="Ionicons" />
-        <ChosenTag style={styles.chosenTag} />
         <FlatList
           style={styles.list}
           renderItem={({ item, separators }) => {
@@ -74,14 +72,7 @@ const styles = StyleSheet.create({
     color: "rgba(255,255,255,1)",
     fontSize: 40
   },
-  chosenTag: {
-    position: "absolute",
-    top: 653.5,
 
-    height: 31,
-    width: 103,
-    left: "6.39%"
-  },
   tagRow: {
     position: "absolute",
     top: 0,
