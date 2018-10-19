@@ -4,6 +4,7 @@ import { Font } from "expo";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
 
+import Search from "./src/screens/Search";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 const DrawerNavigation = DrawerNavigator({
   Splash: {
@@ -11,6 +12,9 @@ const DrawerNavigation = DrawerNavigator({
   },
   Home: {
     screen: Home
+  },
+  Search: {
+    screen: Search
   }
 });
 const StackNavigation = StackNavigator(
@@ -23,6 +27,9 @@ const StackNavigation = StackNavigator(
     },
     Home: {
       screen: Home
+    },
+    Search: {
+      screen: Search
     }
   },
   {

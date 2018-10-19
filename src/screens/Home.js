@@ -52,7 +52,7 @@ export default class Home extends Component {
           style={styles.icon}
           type="MaterialCommunityIcons"
         />
-        <Icon style={styles.icon2} name="search" type="MaterialIcons" />
+        <Icon style={styles.icon2} name="ios-search" type="Ionicons" />
       </View>
     );
   }
@@ -150,18 +150,18 @@ const styles = StyleSheet.create({
   },
   icon: {
     top: 11,
-    left: 13,
+    left: 18,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(255,255,255,1)",
     fontSize: 40
   },
   icon2: {
-    top: 13,
+    top: 11,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(255,255,255,1)",
     fontSize: 35,
-    left: "87.78%"
+    left: "89.72%"
   }
 });
