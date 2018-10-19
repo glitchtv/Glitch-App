@@ -8,6 +8,7 @@ import Search from "./src/screens/Search";
 import SearchText from "./src/screens/SearchText";
 import SearchTags from "./src/screens/SearchTags";
 import AnimeInfo from "./src/screens/AnimeInfo";
+import Episodes from "./src/screens/Episodes";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 const DrawerNavigation = DrawerNavigator({
   Splash: {
@@ -27,6 +28,9 @@ const DrawerNavigation = DrawerNavigator({
   },
   AnimeInfo: {
     screen: AnimeInfo
+  },
+  Episodes: {
+    screen: Episodes
   }
 });
 const StackNavigation = StackNavigator(
@@ -51,6 +55,9 @@ const StackNavigation = StackNavigator(
     },
     AnimeInfo: {
       screen: AnimeInfo
+    },
+    Episodes: {
+      screen: Episodes
     }
   },
   {

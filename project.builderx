@@ -5,7 +5,8 @@
         "/src/screens/Search.js",
         "/src/screens/SearchText.js",
         "/src/screens/SearchTags.js",
-        "/src/screens/AnimeInfo.js"
+        "/src/screens/AnimeInfo.js",
+        "/src/screens/Episodes.js"
     ],
     "symbols": [
         "/src/symbols/AnimeCard.js",
@@ -14,7 +15,8 @@
         "/src/symbols/Tag.js",
         "/src/symbols/TagRow.js",
         "/src/symbols/button31.js",
-        "/src/symbols/AnimeRow.js"
+        "/src/symbols/AnimeRow.js",
+        "/src/symbols/ListItem.js"
     ],
     "assets": [],
     "defaultArtboardDirectory": "/src/screens",
