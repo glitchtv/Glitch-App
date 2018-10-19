@@ -1,0 +1,20 @@
+{
+    "artboards": [
+        "/src/screens/Splash.js",
+        "/src/screens/Untitled.js"
+    ],
+    "symbols": [
+        "/src/symbols/header5.js"
+    ],
+    "assets": [],
+    "defaultArtboardDirectory": "/src/screens",
+    "defaultSymbolDirectory": "/src/symbols",
+    "defaultAssetDirectory": "/src/assets",
+    "deviceName": "OnePlus 5T",
+    "deviceOrientation": "portrait",
+    "basePath": "/Users/hello/Downloads/GlitchApp",
+    "tempPath": "/var/folders/mx/6x1yjh6j2bb9lfpdx8zs5wrm0000gn/T/Builder1kXLCh5",
+    "useStylesheet": true,
+    "rulers": {},
+    "missingFonts": []
+}
