@@ -19,7 +19,7 @@ export default class AnimeInfo extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <ChosenTag style={styles.chosenTag} text2 />
+                <ChosenTag style={styles.chosenTag} text2="" />
               </View>
             );
           }}
@@ -27,13 +27,7 @@ export default class AnimeInfo extends Component {
         />
         <Text style={styles.text2}>Status - Year</Text>
         <Text style={styles.text3}>
-          Because you don't build any native code when using Expo to create a
-          project, it's not possible to include custom native modules beyond the
-          React Native APIs and components that are available in the Expo client
-          app. If you know that you'll eventually need to include your own
-          native code, Expo is still a good way to get started. In that case
-          you'll just need to "eject" eventually to create your own native
-          builds. If you do ej...
+          Because you don't build any native code when using Expo to create a project, it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app. If you know that you'll eventually need to include your own native code, Expo is still a good way to get started. In that case you'll just need to "eject" eventually to create your own native builds. If you do ej...
         </Text>
         <Center horizontal>
           <Button3
