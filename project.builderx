@@ -9,7 +9,8 @@
         "/src/symbols/button3.js",
         "/src/symbols/ChosenTag.js",
         "/src/symbols/Tag.js",
-        "/src/symbols/TagRow.js"
+        "/src/symbols/TagRow.js",
+        "/src/symbols/button31.js"
     ],
     "assets": [],
     "defaultArtboardDirectory": "/src/screens",
