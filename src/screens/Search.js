@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Icon from "@builderx/icons";
-import { Center } from "@builderx/utils";
+
 import ChosenTag from "../symbols/ChosenTag";
 import TagRow from "../symbols/TagRow";
 
@@ -12,7 +12,6 @@ export default class Search extends Component {
       <View style={styles.root}>
         <Icon name="ios-close" style={styles.icon} type="Ionicons" />
         <ChosenTag style={styles.chosenTag} />
-        <TagRow style={styles.tagRow} />
         <FlatList
           style={styles.list}
           renderItem={({ item, separators }) => {
@@ -30,7 +29,7 @@ export default class Search extends Component {
 }
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: "white",
+    backgroundColor: "#000",
     flex: 1
   },
 
@@ -58,13 +57,14 @@ const styles = StyleSheet.create({
   },
   list: {
     position: "absolute",
-    width: 321,
-    height: 93,
+    width: 320,
+    height: 341.49,
     top: 120,
     left: 19
   },
   rect3: {
     height: 31,
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    marginBottom: 7
   }
 });
