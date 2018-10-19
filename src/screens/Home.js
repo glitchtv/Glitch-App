@@ -20,13 +20,25 @@ export default class Home extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <AnimeCard style={styles.animeCard} animeTitle genre />
+                <AnimeCard style={styles.animeCard} animeTitle="" genre="" />
               </View>
             );
           }}
           horizontal={true}
         />
-        <Text style={styles.recentLabel}>Recently Watched</Text>
+        <Text style={styles.label}>Recently Watched</Text>
+        <FlatList
+          style={styles.list2}
+          renderItem={({ item, separators }) => {
+            return (
+              <View style={styles.rect2}>
+                <AnimeCard style={styles.animeCard2} animeTitle="" genre="" />
+              </View>
+            );
+          }}
+          horizontal={true}
+        />
+        <Text style={styles.label2}>Watch Next</Text>
       </View>
     );
   }
@@ -70,8 +82,34 @@ const styles = StyleSheet.create({
     height: 243,
     position: "absolute"
   },
-  recentLabel: {
+  label: {
     top: 84,
+    left: 28,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(170,170,170,1)"
+  },
+  list2: {
+    top: 397,
+    left: 0,
+    right: 0,
+    height: 243,
+    position: "absolute"
+  },
+  rect2: {
+    width: 146,
+    height: 243,
+    marginLeft: 20
+  },
+  animeCard2: {
+    top: 0,
+    left: 0,
+    width: 146,
+    height: 243,
+    position: "absolute"
+  },
+  label2: {
+    top: 374,
     left: 28,
     position: "absolute",
     backgroundColor: "transparent",
