@@ -16,7 +16,7 @@ export default class TagRow extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect2}>
-                <Tag style={styles.tag} text />
+                <Tag style={styles.tag} text="" />
               </View>
             );
           }}

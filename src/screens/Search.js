@@ -4,7 +4,8 @@ import Icon from "@builderx/icons";
 import ChosenTag from "../symbols/ChosenTag";
 import TagRow from "../symbols/TagRow";
 
-import { View, StyleSheet, FlatList } from "react-native";
+import { Center } from "@builderx/utils";
+import { View, StyleSheet, FlatList, Text } from "react-native";
 
 export default class Search extends Component {
   render() {
@@ -23,6 +24,19 @@ export default class Search extends Component {
           }}
           horizontal={false}
         />
+        <Text style={styles.label}>Genres</Text>
+        <FlatList
+          style={styles.list2}
+          renderItem={({ item, separators }) => {
+            return (
+              <View style={styles.rect4}>
+                <TagRow style={styles.tagRow2} />
+              </View>
+            );
+          }}
+          horizontal={false}
+        />
+        <Text style={styles.text}>Status</Text>
       </View>
     );
   }
@@ -43,10 +57,11 @@ const styles = StyleSheet.create({
   },
   chosenTag: {
     position: "absolute",
-    top: 73,
-    left: 51,
+    top: 651,
+
     height: 31,
-    width: 102
+    width: 103,
+    left: "0%"
   },
   tagRow: {
     position: "absolute",
@@ -66,5 +81,38 @@ const styles = StyleSheet.create({
     height: 31,
     alignSelf: "stretch",
     marginBottom: 7
+  },
+  label: {
+    top: 99,
+    left: 23,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(170,170,170,1)"
+  },
+  list2: {
+    top: 490,
+    left: 20,
+    width: 319,
+    height: 152.59,
+    position: "absolute"
+  },
+  rect4: {
+    height: 31,
+    alignSelf: "stretch",
+    marginBottom: 7
+  },
+  tagRow2: {
+    top: 0,
+    left: "0%",
+    width: 321,
+    height: 31,
+    position: "absolute"
+  },
+  text: {
+    top: 470,
+    left: 24,
+    position: "absolute",
+    backgroundColor: "transparent",
+    color: "rgba(170,170,170,1)"
   }
 });
