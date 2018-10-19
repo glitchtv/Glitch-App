@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   },
   rect: {
     height: 240,
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    marginBottom: 10
   },
   animeRow: {
     top: 0,
