@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     top: 12,
-    left: 23,
+    left: 22.5,
     position: "absolute",
     backgroundColor: "transparent",
     color: "rgba(255,255,255,1)",
