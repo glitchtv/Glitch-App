@@ -4,7 +4,8 @@
         "/src/screens/Home.js"
     ],
     "symbols": [
-        "/src/symbols/AnimeCard.js"
+        "/src/symbols/AnimeCard.js",
+        "/src/symbols/button3.js"
     ],
     "assets": [],
     "defaultArtboardDirectory": "/src/screens",
