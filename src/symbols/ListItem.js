@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default class ListItem extends Component {
   // Only for displaying symbol in BuilderX.
@@ -9,12 +9,12 @@ export default class ListItem extends Component {
   };
   render() {
     return (
-      <View style={[this.props.style]}>
+      <TouchableOpacity onPress={this.props.handler} style={[this.props.style]}>
         <View style={styles.rect2} />
         <Text style={styles.text} selectionColor="rgba(191,10,116,1)">
-          {this.props.text ? this.props.text : "Episode 1"}
+          {this.props.text ? this.props.text : "No more episodes!"}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

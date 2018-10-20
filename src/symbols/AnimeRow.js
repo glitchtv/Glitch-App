@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AnimeCard from "./AnimeCard";
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet, Dimensions } from "react-native";
+var { width, height } = Dimensions.get('window')
 
 export default class AnimeRow extends Component {
   // Only for displaying symbol in BuilderX.
@@ -12,14 +13,16 @@ export default class AnimeRow extends Component {
     return (
       <View style={[this.props.style]}>
         <FlatList
+          scrollEnabled={false}
           style={styles.list}
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <AnimeCard style={styles.animeCard} animeTitle genre />
+                <AnimeCard style={styles.animeCard} anime={item} navigation={this.props.navigation} />
               </View>
             );
           }}
+          data={this.props.data}
           horizontal={true}
         />
       </View>
@@ -28,19 +31,19 @@ export default class AnimeRow extends Component {
 }
 const styles = StyleSheet.create({
   list: {
-    width: 318,
+    width: width * 0.9,
     height: 240
   },
   rect: {
-    width: 146,
-    height: 241,
-    marginRight: 23
+    width: width * 0.4,
+    height: width * 0.65,
+    marginRight: width * 0.1
   },
   animeCard: {
     top: 0,
     left: 0,
-    width: 146,
-    height: 241,
+    width: width * 0.4,
+    height: width * 0.65,
     position: "absolute"
   }
 });

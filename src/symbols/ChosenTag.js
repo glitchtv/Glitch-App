@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
     top: 0,
     left: "0%",
     width: width * .3,
-    height: height * .05,
+    height: 40,
     position: "absolute",
     backgroundColor: "rgba(191,10,116,1)",
     opacity: 1,
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: "rgba(191,10,116,1)",
     borderRadius: 40
   },
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: width * .3,
     position: "absolute",
     backgroundColor: "transparent",
-    fontSize: height * .05 * .4,
+    fontSize: 16,
     textAlign: "center",
     color: "rgba(255,255,255,1)"
   }

@@ -24,7 +24,7 @@ export default class SearchText extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <AnimeRow style={styles.animeRow} />
+                <AnimeRow navigation={this.props.navigation} style={styles.animeRow} />
               </View>
             );
           }}

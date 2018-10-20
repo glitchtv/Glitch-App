@@ -5,7 +5,7 @@ import TagRow from "../symbols/TagRow";
 
 import { Center } from "@builderx/utils";
 import Button31 from "../symbols/button31";
-import { View, StyleSheet, FlatList, Text, TextInput, Dimensions, ScrollView } from "react-native";
+import { View, StyleSheet, FlatList, Text, TextInput, Dimensions, StatusBar } from "react-native";
 var { width, height } = Dimensions.get('window')
 
 var logger = (tag) => ((t) => console.log(`[${tag}] ${t}`))
@@ -28,7 +28,8 @@ export default class Search extends Component {
     let data = this.props.navigation.state.params
     return (
       <View scrollEnabled style={styles.root}>
-        <Icon name="ios-close" style={styles.icon} type="Ionicons" />
+        <StatusBar barStyle="light-content" hidden={true}/>
+        <Icon onPress={() => this.props.navigation.goBack()} name="ios-close" style={styles.icon} type="Ionicons" />
         <FlatList
           style={styles.list}
           renderItem={({ item, separators }) => {
@@ -36,13 +37,22 @@ export default class Search extends Component {
               <View style={styles.rect3}>
                 <TagRow style={styles.tagRow} handler={i => {
                   log("Chose " + i)
-                  let g = this.state.genres
-                  if (g.indexOf(i) > -1) g = g.filter(_ => _ != i)
-                  else g.push(i)
-                  this.setState({
-                    genres: g
-                  })
-                }} checker={_ => this.state.genres.indexOf(_) > -1} data={item} />
+                  if (data.filters.genres.indexOf(i) > -1) {
+                    let g = this.state.genres
+                    if (g.indexOf(i) > -1) g = g.filter(_ => _ != i)
+                    else g.push(i)
+                    this.setState({
+                      genres: g
+                    })
+                  } else if (data.filters.status.indexOf(i) > -1) {
+                    let s = this.state.status
+                    if (s.indexOf(i) > -1) s = s.filter(_ => _ != i)
+                    else s.push(i)
+                    this.setState({
+                      status: s
+                    })
+                  }
+                }} checker={_ => this.state.genres.indexOf(_) > -1 || this.state.status.indexOf(_) > -1} data={item} />
               </View>
             );
           }}
@@ -50,26 +60,6 @@ export default class Search extends Component {
           horizontal={false}
         />
         <Text style={styles.label}>Genres</Text>
-        <FlatList
-          style={styles.list2}
-          renderItem={({ item, separators }) => {
-            return (
-              <View style={styles.rect4}>
-                <TagRow style={styles.tagRow2} handler={i => {
-                  let s = this.state.status
-                  if (s.indexOf(i) > -1) s = s.filter(_ => _ != i)
-                  else s.push(i)
-                  this.setState({
-                    status: s
-                  })
-                }} checker={_ => this.state.status.indexOf(_) > -1} data={item} />
-              </View>
-            );
-          }}
-          data={chunks(data.filters.status.concat(data.filters.genres), 3)}
-          horizontal={false}
-        />
-        <Text style={styles.label2}>Status</Text>
         <Center horizontal>
           <TextInput
             placeholder="Type to search..."
@@ -81,18 +71,20 @@ export default class Search extends Component {
         <Center horizontal>
           <Text style={styles.helpText}>OR, select filters below</Text>
         </Center>
-        <Button31
-          handler={() => {
-            data.search = {
-              genres: this.state.genres.length > 0 ? this.state.genres : data.filters.genres,
-              status: this.state.status.length > 0 ? this.state.status : data.filters.status
-            }
-            this.props.navigation.navigate('SearchTags', data)
-          }}
-          style={styles.searchButton}
-          iconType="FontAwesome"
-          iconName="check"
-        />
+        <Center horizontal>
+          <Button31
+            handler={() => {
+              data.search = {
+                genres: this.state.genres,
+                status: this.state.status
+              }
+              this.props.navigation.navigate('SearchTags', data)
+            }}
+            style={styles.searchButton}
+            iconType="FontAwesome"
+            iconName="check"
+          />
+        </Center>
       </View>
     );
   }
@@ -122,7 +114,7 @@ const styles = StyleSheet.create({
   list: {
     position: "absolute",
     width: width,
-    height: height * (520/822),
+    height: height * 0.7,
     top: 150,
     left: 19
   },
@@ -184,8 +176,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: 56,
     width: 56,
-    bottom: 15,
-    right: 15,
+    bottom: 20,
     backgroundColor: "rgba(191,10,116,1)",
     opacity: 1
   }

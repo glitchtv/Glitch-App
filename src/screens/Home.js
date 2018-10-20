@@ -39,7 +39,7 @@ export default class Home extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <AnimeCard style={styles.animeCard} image={item.image} animeTitle={item.title} genre={item.genre.join(', ')} />
+                <AnimeCard style={styles.animeCard} anime={item} navigation={this.props.navigation} />
               </View>
             );
           }}
@@ -52,7 +52,7 @@ export default class Home extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect2}>
-                <AnimeCard style={styles.animeCard2} image={item.image} animeTitle={item.title} genre={item.genre.join(', ')} />
+                <AnimeCard style={styles.animeCard2} anime={item} navigation={this.props.navigation} />
               </View>
             );
           }}

@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+   "name": "Glitch TV",
+   "icon": "./src/assets/Glitch-Logo.png",
+   "version": "0.0.6",
+   "slug": "glitch-tv",
+   "sdkVersion": "26.0.0",
+   "ios": {
+     "bundleIdentifier": "com.glitch.glitchtv"
+   },
+   "android": {
+     "package": "com.glitch.glitchtv"
+   }
   }
 }

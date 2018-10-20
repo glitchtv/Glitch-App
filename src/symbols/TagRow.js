@@ -15,6 +15,7 @@ export default class TagRow extends Component {
       <View style={[this.props.style]}>
         <FlatList
           style={styles.list}
+          scrollEnabled={false}
           renderItem={({ item, separators }) => {
             if (this.props.checker(item))
               return (

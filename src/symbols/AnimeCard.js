@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
 export default class AnimeCard extends Component {
   // Only for displaying symbol in BuilderX.
@@ -9,23 +9,23 @@ export default class AnimeCard extends Component {
   };
   render() {
     return (
-      <View style={[this.props.style]}>
-        <Image source={{uri: this.props.image}} style={styles.animeCover} />
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('AnimeInfo', {...this.props.navigation.state.params, selectedAnime: this.props.anime})} style={[this.props.style]}>
+        <Image source={{uri: this.props.anime.image}} style={styles.animeCover} />
         <Text style={styles.animeTitle} selectable={false} numberOfLines={2}>
-          {this.props.animeTitle ? (
-            this.props.animeTitle
+          {this.props.anime.title ? (
+            this.props.anime.title
           ) : (
-            "\n          Kimi no Uwa\n        "
+            "\n          Coming Soon\n        "
           )}
         </Text>
         <Text style={styles.genre} selectable={false} numberOfLines={2}>
-          {this.props.genre ? (
-            this.props.genre
+          {this.props.anime.genre ? (
+            this.props.anime.genre.join(', ')
           ) : (
             "\n          Ecchi, Fantasy\n        "
           )}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
