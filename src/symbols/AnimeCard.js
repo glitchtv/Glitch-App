@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
 
 export default class AnimeCard extends Component {
   // Only for displaying symbol in BuilderX.
@@ -10,7 +10,7 @@ export default class AnimeCard extends Component {
   render() {
     return (
       <View style={[this.props.style]}>
-        <View style={styles.animeCover} />
+        <Image source={{uri: this.props.image}} style={styles.animeCover} />
         <Text style={styles.animeTitle} selectable={false} numberOfLines={2}>
           {this.props.animeTitle ? (
             this.props.animeTitle

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Dimensions, TouchableOpacity } from "react-native";
+var { width, height } = Dimensions.get('window')
 
 export default class ChosenTag extends Component {
   // Only for displaying symbol in BuilderX.
@@ -9,12 +10,12 @@ export default class ChosenTag extends Component {
   };
   render() {
     return (
-      <View style={[this.props.style]}>
+      <TouchableOpacity onPress={() => this.props.handler(this.props.text)} style={[this.props.style]}>
         <View style={styles.rect3} />
         <Text style={styles.text2}>
-          {this.props.text2 ? this.props.text2 : "Genre"}
+          {this.props.text ? this.props.text : "Genre"}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -22,8 +23,8 @@ const styles = StyleSheet.create({
   rect3: {
     top: 0,
     left: "0%",
-    width: 102,
-    height: 31,
+    width: width * .3,
+    height: height * .05,
     position: "absolute",
     backgroundColor: "rgba(191,10,116,1)",
     opacity: 1,
@@ -32,12 +33,12 @@ const styles = StyleSheet.create({
     borderRadius: 40
   },
   text2: {
-    top: 9,
+    top: 10,
     left: 0,
-    width: 102,
+    width: width * .3,
     position: "absolute",
     backgroundColor: "transparent",
-    fontSize: 14,
+    fontSize: height * .05 * .4,
     textAlign: "center",
     color: "rgba(255,255,255,1)"
   }

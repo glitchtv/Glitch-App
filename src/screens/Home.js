@@ -4,12 +4,28 @@ import AnimeCard from "../symbols/AnimeCard";
 
 import Button3 from "../symbols/button3";
 import Icon from "@builderx/icons";
-import { View, StyleSheet, Image, FlatList, Text } from "react-native";
+import { View, StyleSheet, Image, FlatList, Text, StatusBar } from "react-native";
+
+var logger = (tag) => ((t) => console.log(`[${tag}] ${t}`))
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
 export default class Home extends Component {
   render() {
+    let log = logger("Home")
+    let data = this.props.navigation.state.params
     return (
       <View style={styles.root}>
+        <StatusBar barStyle="light-content" hidden={true}/>
         <View style={styles.rect3} />
         <View style={styles.header} />
         <Center horizontal>
@@ -23,10 +39,11 @@ export default class Home extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect}>
-                <AnimeCard style={styles.animeCard} animeTitle="" genre="" />
+                <AnimeCard style={styles.animeCard} image={item.image} animeTitle={item.title} genre={item.genre.join(', ')} />
               </View>
             );
           }}
+          data={[]}
           horizontal={true}
         />
         <Text style={styles.label}>Recently Watched</Text>
@@ -35,18 +52,25 @@ export default class Home extends Component {
           renderItem={({ item, separators }) => {
             return (
               <View style={styles.rect2}>
-                <AnimeCard style={styles.animeCard2} animeTitle="" genre="" />
+                <AnimeCard style={styles.animeCard2} image={item.image} animeTitle={item.title} genre={item.genre.join(', ')} />
               </View>
             );
           }}
+          data={shuffle(data.animes).slice(0, 10)}
           horizontal={true}
         />
         <Text style={styles.label2}>Watch Next</Text>
-        <Button3
-          style={styles.search}
-          iconType="FontAwesome"
-          iconName="search"
-        />
+        <Center horizontal>
+          <Button3
+            handler={() => {
+              log("Clicked Search (through button).")
+              this.props.navigation.navigate('Search', data)
+            }}
+            style={styles.search}
+            iconType="FontAwesome"
+            iconName="search"
+          />
+        </Center>
         <Icon
           name="refresh"
           style={styles.icon}
@@ -64,7 +88,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60,
-    width: 360,
+    width: "100%",
     top: 0,
     left: 0,
     position: "absolute",
@@ -80,7 +104,7 @@ const styles = StyleSheet.create({
   list: {
     position: "absolute",
     height: 243,
-    top: 107,
+    top: 115,
     left: 0,
     right: 0
   },
@@ -104,7 +128,7 @@ const styles = StyleSheet.create({
     color: "rgba(170,170,170,1)"
   },
   list2: {
-    top: 397,
+    top: 412,
     left: 0,
     right: 0,
     height: 243,
@@ -139,8 +163,7 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   search: {
-    top: 630,
-    left: 277,
+    bottom: 30,
     position: "absolute",
     height: 69,
     width: 69,
@@ -149,7 +172,7 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   icon: {
-    top: 11,
+    top: 9,
     left: 18,
     position: "absolute",
     backgroundColor: "transparent",

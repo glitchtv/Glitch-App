@@ -5,7 +5,12 @@ import AnimeRow from "../symbols/AnimeRow";
 import { Center } from "@builderx/utils";
 import ChosenTag from "../symbols/ChosenTag";
 
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, Dimensions } from "react-native";
+
+var { width, height } = Dimensions.get('window')
+
+var logger = (tag) => ((t) => console.log(`[${tag}] ${t}`))
+
 
 export default class SearchTags extends Component {
   render() {

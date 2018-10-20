@@ -12,7 +12,7 @@ export default class button3 extends Component {
   };
   render() {
     return (
-      <TouchableOpacity style={[styles.root, this.props.style]}>
+      <TouchableOpacity onPress={this.props.handler} style={[styles.root, this.props.style]}>
         <Icon
           style={styles.icon}
           name={this.props.iconName ? this.props.iconName : "share-variant"}
